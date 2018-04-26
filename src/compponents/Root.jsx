@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import P1 from './P1'
+import P2 from './P2'
 
 class Root extends Component {
     constructor(props) {
@@ -27,6 +28,7 @@ class Root extends Component {
         return (
             <div>
                 <P1 world={this.state.world} />
+                <P2 world={this.state.world} />
             </div>
         )
     }

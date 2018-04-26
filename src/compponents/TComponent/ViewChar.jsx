@@ -17,6 +17,7 @@ class ViewChar extends Component {
                     margin: '0 3px',
                     padding: '3px'
                 }}
+                onClick={this.props.onClick}
             >
                 <span>{this.props.char}</span>
             </div>
@@ -26,6 +27,7 @@ class ViewChar extends Component {
 
 ViewChar.propTypes = {
     char: PropTypes.string.isRequired,
+    onClick: PropTypes.func,
 }
 
 export default ViewChar
