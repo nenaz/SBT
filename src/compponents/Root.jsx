@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ViewChar from './TComponent/'
+import P1 from './P1'
 
 class Root extends Component {
     constructor(props) {
@@ -24,15 +24,9 @@ class Root extends Component {
     }
 
     render() {
-        const arrChar = this.state.world.split('')
-        // debugger
         return (
             <div>
-                {arrChar.map((char, key) => {
-                    return (
-                        <ViewChar key={key} char={char} />
-                    )
-                })}
+                <P1 world={this.state.world} />
             </div>
         )
     }
