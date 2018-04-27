@@ -6,17 +6,40 @@ class P2 extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            count: 0,
+            // count: 0,
+            number1: -1,
+            number2: -1,
         }
 
-        this.handleClick = this.handleClick.bind(this)
+        this.handleClickEl1 = this.handleClickEl1.bind(this)
+        this.handleClickEl2 = this.handleClickEl2.bind(this)
     }
 
-    handleClick() {
+    handleClickEl1() {
         console.log('click')
-        let locCount = this.state.count
+        let locCount = (this.state.number2 >= this.state.number1)
+            ? this.state.number2
+            : this.state.number1
+        locCount += 1
+        if (locCount >= this.props.world.length) {
+            locCount = 0
+        }
         this.setState({
-            count: ++locCount,
+            number1: locCount,
+        })
+    }
+
+    handleClickEl2() {
+        console.log('click')
+        let locCount = (this.state.number1 >= this.state.number2)
+            ? this.state.number1
+            : this.state.number2
+        locCount += 1
+        if (locCount >= this.props.world.length) {
+            locCount = 0
+        }
+        this.setState({
+            number2: locCount,
         })
     }
 
@@ -25,12 +48,12 @@ class P2 extends Component {
         return (
             <div>
                 <ViewChar
-                    char={this.props.world[this.state.count]}
-                    onClick={this.handleClick}
+                    char={this.props.world[this.state.number1]}
+                    onClick={this.handleClickEl1}
                 />
                 <ViewChar
-                    char={this.props.world[this.state.count]}
-                    onClick={this.handleClick}
+                    char={this.props.world[this.state.number2]}
+                    onClick={this.handleClickEl2}
                 />
             </div>
         )

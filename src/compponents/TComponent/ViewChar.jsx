@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import css from '../../css/ViewChar.css'
 
 class ViewChar extends Component {
     constructor(props) {
@@ -8,25 +9,21 @@ class ViewChar extends Component {
     }
 
     render() {
+        const textEl = (this.props.char)
+            ? <span>{this.props.char}</span>
+            : <span dangerouslySetInnerHTML={{ __html: '&nbsp;' }} />
         return (
-            <div
-                style={{
-                    border: '1px solid black',
-                    backgroundColor: 'white',
-                    display: 'inline-block',
-                    margin: '0 3px',
-                    padding: '3px'
-                }}
+            <div className={css.nzViewChar}
                 onClick={this.props.onClick}
             >
-                <span>{this.props.char}</span>
+                {textEl}
             </div>
         )
     }
 }
 
 ViewChar.propTypes = {
-    char: PropTypes.string.isRequired,
+    char: PropTypes.string,
     onClick: PropTypes.func,
 }
 
