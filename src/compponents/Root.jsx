@@ -34,7 +34,6 @@ class Root extends Component {
         })
     }
 
-
     parseUrlParams() {
         const searchParams = new URLSearchParams(window.location.search.substring(1))
         const newWorld = searchParams.get('world')
@@ -60,7 +59,8 @@ class Root extends Component {
                         type="checkbox"
                         id="nzReverse"
                         onClick={this.handleCheckboxToggleReverse}
-                    /><label htmlFor="nzReverse">Reverse</label>
+                    />
+                    <label htmlFor="nzReverse">Reverse</label>
                 </div>
                 <P1 world={this.state.world} />
                 <P2 world={this.state.world} />

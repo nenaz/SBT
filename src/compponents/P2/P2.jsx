@@ -6,7 +6,6 @@ class P2 extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            // count: 0,
             number1: -1,
             number2: -1,
         }
@@ -16,7 +15,6 @@ class P2 extends Component {
     }
 
     handleClickEl1() {
-        console.log('click')
         let locCount = (this.state.number2 >= this.state.number1)
             ? this.state.number2
             : this.state.number1
@@ -30,7 +28,6 @@ class P2 extends Component {
     }
 
     handleClickEl2() {
-        console.log('click')
         let locCount = (this.state.number1 >= this.state.number2)
             ? this.state.number1
             : this.state.number2
@@ -44,7 +41,6 @@ class P2 extends Component {
     }
 
     render() {
-        // const arrChar = this.props.world.split('')
         return (
             <div>
                 <ViewChar
